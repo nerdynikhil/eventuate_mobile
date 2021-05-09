@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'dashboard.dart';
+
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
@@ -292,37 +294,39 @@ class _SignUpState extends State<SignUp> {
   }
 
   void signup() {
-    String name = username.text.toString().trim();
-    String mob = phno.text.toString().trim();
-    String mail = email.text.toString().trim();
-    String pass = password.text.toString().trim();
-    String conpass = conpassword.text.toString().trim();
-    if (name.isEmpty)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Username can't be empty"),
-      ));
-    else if (mob.isEmpty)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Phone number can't be empty"),
-      ));
-    else if (mail.isEmpty)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Email can't be empty"),
-      ));
-    else if (pass.isEmpty)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Password can't be empty"),
-      ));
-    else if (conpass.isEmpty)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Confirm your password"),
-      ));
-    else if (groupValue != 1 && groupValue != 2)
-      key.currentState.showSnackBar(SnackBar(
-        content: Text("Provide your gender"),
-      ));
-    else {
-      String url = "https://nerdynikhil.tech/test/signup.php?";
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Dashboard()));
+    // String name = username.text.toString().trim();
+    // String mob = phno.text.toString().trim();
+    // String mail = email.text.toString().trim();
+    // String pass = password.text.toString().trim();
+    // String conpass = conpassword.text.toString().trim();
+    // if (name.isEmpty)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Username can't be empty"),
+    //   ));
+    // else if (mob.isEmpty)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Phone number can't be empty"),
+    //   ));
+    // else if (mail.isEmpty)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Email can't be empty"),
+    //   ));
+    // else if (pass.isEmpty)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Password can't be empty"),
+    //   ));
+    // else if (conpass.isEmpty)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Confirm your password"),
+    //   ));
+    // else if (groupValue != 1 && groupValue != 2)
+    //   key.currentState.showSnackBar(SnackBar(
+    //     content: Text("Provide your gender"),
+    //   ));
+    // else {
+    //   String url = "https://nerdynikhil.tech/test/signup.php?";
       // var response = http.get(url +
       //     "name=$name&password=$conpass&email=$mail&phone=$mob&gender=$groupValue");
       // print(url +
@@ -343,7 +347,7 @@ class _SignUpState extends State<SignUp> {
       //     ));
       //   }
       // });
-    }
+    //}
   }
 
   showSnack() {

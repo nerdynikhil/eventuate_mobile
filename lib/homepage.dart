@@ -2,7 +2,7 @@ import 'package:eventuate_mobile/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:eventuate_mobile/signup.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 
@@ -166,40 +166,40 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
 
   login() {
-    setState(() {
-      isLoading = true;
-    });
-    var email = userController.text.trim();
-    var password = passwordController.text.trim();
-    if (email == '' || password == '') {
-      isLoading = false;
-      // ignore: deprecated_member_use
-      return myKey.currentState.showSnackBar(SnackBar(
-        content: Text('Check the fields before login'),
-      ));
-    }
-    String url = "https://nerdynikhil.tech/test/login.php";
-    Future<http.Response> response;
-    // response = http.get(url + "?user=$email&pass=$password");
-    response.then((response) async {
-      setState(() {
-        isLoading = false;
-      });
-      var data = json.decode(response.body);
-      bool value = data['result'];
-      if (value == true) {
-        String id = data['id'];
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString("login", id);
+    // setState(() {
+    //   isLoading = true;
+    // });
+    // var email = userController.text.trim();
+    // var password = passwordController.text.trim();
+    // if (email == '' || password == '') {
+    //   isLoading = false;
+    //   // ignore: deprecated_member_use
+    //   return myKey.currentState.showSnackBar(SnackBar(
+    //     content: Text('Check the fields before login'),
+    //   ));
+    // }
+    // String url = "https://nerdynikhil.tech/test/login.php";
+    // Future<http.Response> response;
+    // // response = http.get(url + "?user=$email&pass=$password");
+    // response.then((response) async {
+    //   setState(() {
+    //     isLoading = false;
+    //   });
+    //   var data = json.decode(response.body);
+    //   bool value = data['result'];
+    //   if (value == true) {
+    //     String id = data['id'];
+    //     SharedPreferences prefs = await SharedPreferences.getInstance();
+    //     await prefs.setString("login", id);
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Dashboard()));
-      } else {
-        String reason = data['reason'];
-        myKey.currentState.showSnackBar(SnackBar(
-          content: Text(reason),
-        ));
-      }
-    });
+      // } else {
+      //   String reason = data['reason'];
+      //   myKey.currentState.showSnackBar(SnackBar(
+      //     content: Text(reason),
+      //   ));
+      //}
+     //});
   }
 
 }
