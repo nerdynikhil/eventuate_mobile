@@ -3,7 +3,7 @@
 ## Project by Team Dev.IO.for [Zairzest Hackathon 2021, Zairza, College of Engineering and Technology, Bhubaneswar](https://zairzest.zairza.in) 
 Track: Miscellaneous.
 
-A blokchain based crowdfunding application made using Flutter, Solidity, web3dart and Infura Etherium API.
+A blockchain based crowdfunding application made using Flutter, Solidity, web3dart and Infura Etherium API.
 
 # Prototypes
 
