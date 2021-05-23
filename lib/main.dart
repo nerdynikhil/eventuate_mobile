@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:eventuate_mobile/splashscreen.dart';
 import 'package:flutter/material.dart';
 

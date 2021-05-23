@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:eventuate_mobile/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
+          .pushReplacement(MaterialPageRoute(builder: (_) => Homepage()));
     });
   }
 
@@ -26,16 +25,12 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // logo here
-            Image.asset(
-              'assets/images/logo.png',
-              height: 200,
-            ),
+            Text("Eventuate Mobile"),
             SizedBox(
               height: 20,
             ),
             CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[900]),
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
             )
           ],
         ),
